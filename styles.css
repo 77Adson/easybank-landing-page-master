@@ -1,0 +1,92 @@
+body {
+    font-family: 'Public Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img, nav button, nav ul{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: gray;
+    text-decoration: none;
+    font-weight: 300;
+    position: relative; /* Required for positioning the pseudo-element */
+}
+
+nav ul li a:hover{
+    color: black;
+    font-weight: 400;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -40px; /* Adjust this value as needed */
+    width: 100%;
+    height: 4px; /* Adjust the thickness as needed */
+    background: linear-gradient(to right, #31D35C, #2BB7DA); /* Bright green to dark green */
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+button {
+    background-image: linear-gradient(to right, #31D35C, #2BB7DA);
+    border: none; /* Remove default border */
+    color: white; /* White text */
+    padding: 15px 32px; /* Add some padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove text decoration */
+    display: inline-block; /* Make it a block element */
+    font-size: 16px; /* Set font size */
+    margin: 4px 0%; /* Add some margin */
+    border-radius: 27px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-weight: 700;
+  }
+button:hover {
+    background-image: linear-gradient(to right, #84d199, #82ccdf);
+}
+  
+main {
+    background-color: #84c3ff;
+}
+
+footer {
+    background-color: #c02727;
+}
+
+.attribution { 
+    font-size: 11px;
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
