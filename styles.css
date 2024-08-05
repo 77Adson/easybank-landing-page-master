@@ -5,10 +5,36 @@ body {
     box-sizing: border-box;
 }
 
+h1 {
+    font-weight: 300;
+    font-size: 50px;
+    margin-bottom: 0px;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 40px;
+    margin-bottom: 0px;
+}
+
+h3 {
+    font-weight: 300;
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+
+
+p{
+    color: #9698A6;
+    font-weight: 300;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
 header {
     background-color: #ffffff;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav {
@@ -16,7 +42,8 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
-nav img, nav button, nav ul{
+
+nav img, nav button, nav ul {
     margin-left: auto;
     margin-right: auto;
 }
@@ -27,14 +54,14 @@ nav ul {
     gap: 20px;
 }
 
-nav ul li a {
-    color: gray;
+ul li a {
+    color: #9698A6;
     text-decoration: none;
     font-weight: 300;
     position: relative; /* Required for positioning the pseudo-element */
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
     color: black;
     font-weight: 400;
 }
@@ -43,9 +70,9 @@ nav ul li a::after {
     content: "";
     position: absolute;
     left: 0;
-    bottom: -40px; /* Adjust this value as needed */
+    bottom: -38px; /* Adjust this value as needed */
     width: 100%;
-    height: 4px; /* Adjust the thickness as needed */
+    height: 5px; /* Adjust the thickness as needed */
     background: linear-gradient(to right, #31D35C, #2BB7DA); /* Bright green to dark green */
     transform: scaleX(0);
     transform-origin: bottom right;
@@ -58,35 +85,181 @@ nav ul li a:hover::after {
 }
 
 button {
+    width: 180px;
     background-image: linear-gradient(to right, #31D35C, #2BB7DA);
-    border: none; /* Remove default border */
-    color: white; /* White text */
-    padding: 15px 32px; /* Add some padding */
-    text-align: center; /* Center text */
-    text-decoration: none; /* Remove text decoration */
-    display: inline-block; /* Make it a block element */
-    font-size: 16px; /* Set font size */
-    margin: 4px 0%; /* Add some margin */
-    border-radius: 27px; /* Rounded corners */
-    cursor: pointer; /* Change cursor to pointer on hover */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 27px;
+    cursor: pointer;
     font-weight: 700;
-  }
+}
+
 button:hover {
     background-image: linear-gradient(to right, #84d199, #82ccdf);
 }
-  
-main {
-    background-color: #84c3ff;
+
+.intro_adv {
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: row;
+    height: 665px;
+}
+
+.intro_left {
+    width: 30%;
+    flex-shrink:initial 3;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    margin-left: 0%;
+    padding: 8%;
+}
+
+.intro_right {
+    width: 70%;
+    height: 200%;
+    flex-grow: 7;
+    position: relative;
+    overflow: hidden; /* Hide all overflow except for the intro_mocup */
+}
+
+.intro_background {
+    width: 150%;
+    height: 80%;
+    z-index: 1;
+    position: absolute;
+    top: -20%;
+    left: -8%;
+}
+
+.intro_mocup {
+    z-index: 2;
+    position: absolute;
+    top: -12%;
+    right: -12%;
+    width: auto;
+    height: 80%;
+}
+
+.features {
+    background-color: #F3F4F6;
+    width: auto;
+    height: 675px;
+    display: flex;
+    flex-direction: column;
+} 
+.block0 {
+    margin-top: 100px;
+    width: 35%;
+}
+
+.blocks {
+    display: flex;
+    width: 80%;
+}
+
+.block1, .block2, .block3, .block4{
+    margin-top: 50px;
+    margin-left: 0;
+    margin-right: 80px;
+    width: 20%;
+}
+.articles img{
+    height: 250px;
+    width: 300px;
+}
+.articles {
+    width: auto;
+    height: 655px;
+    margin-top: 0;
+    background-color: #FAFAFA;
+    display: flex;
+    flex-direction: column;
+}
+
+.art_items{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+.art_items p, .art_items h3{
+    width: 75%;
+    margin: 0px;
+}
+
+.art_items .author {
+    font-size: 14px;
+    margin-top: 35px;
+}
+
+.art_items h3{
+    margin: 20px;
+}
+
+.art_items p{
+    font-size: 16px;
+}
+
+.art1, .art2, .art3, .art4 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 footer {
-    background-color: #c02727;
+    background-color: #2D314D;
+    color: white;
+    height: 190px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
 }
 
-.attribution { 
+.seg1, .seg2, .seg3, .seg4, .seg5 {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 45px;
+}
+.seg3{
+    background-color: red;
+}
+.seg1 .logo_neg {
+    width: 139px;
+    height: 20px;
+    margin-bottom: 50px;
+}
+footer ul img{
+    width: 20px;
+    height: auto;
+    padding: 4px;
+}
+
+footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+footer ul li{
+    padding: 10px;
+}
+
+.features, .articles, footer{
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.attribution {
     font-size: 11px;
+    color: #FFFFFF;
     text-align: center;
 }
+
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color:  gray;
 }
