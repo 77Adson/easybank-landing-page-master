@@ -1,96 +1,50 @@
+/* ===================
+   Global Styles
+=================== */
 body {
     font-family: 'Public Sans', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #ffa9a9;
+}
+
+h1, h2, h3 {
+    font-weight: 300;
+    margin-bottom: 0;
 }
 
 h1 {
-    font-weight: 300;
     font-size: 55px;
-    margin-bottom: 0px;
 }
 
 h2 {
-    font-weight: 300;
     font-size: 40px;
-    margin-bottom: 0px;
 }
 
 h3 {
-    font-weight: 300;
     font-size: 24px;
 }
 
-
-p{
+p {
     color: #9698A6;
     font-weight: 300;
-    margin-top: 30px;
-    margin-bottom: 30px;
     font-size: 18px;
 }
 
-header {
-    background-color: #ffffff;
-    padding: 20px;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav img, nav button, nav ul {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-ul li a {
+a{
     color: #9698A6;
     text-decoration: none;
     font-weight: 300;
-    position: relative; /* Required for positioning the pseudo-element */
-}
-
-nav ul li a:hover {
-    color: black;
-    font-weight: 400;
-}
-
-nav ul li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -38px; /* Adjust this value as needed */
-    width: 100%;
-    height: 5px; /* Adjust the thickness as needed */
-    background: linear-gradient(to right, #31D35C, #2BB7DA); /* Bright green to dark green */
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: transform 0.3s ease-out;
-}
-
-nav ul li a:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
 }
 
 button {
     width: 180px;
     background-image: linear-gradient(to right, #31D35C, #2BB7DA);
     border: none;
-    color: white;
+    color: #FFFFFF;
     padding: 15px 32px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
     font-size: 16px;
     border-radius: 27px;
@@ -102,8 +56,76 @@ button:hover {
     background-image: linear-gradient(to right, #84d199, #82ccdf);
 }
 
-.intro_section{
-    overflow-y: visible;
+/* ===================
+   Header and Navigation
+=================== */
+header {
+    background-color: #ffffff;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+    
+    height: 80px;
+    box-sizing: border-box;
+    padding: 0 10%;
+}
+
+nav img {
+    max-width: 200px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+}
+
+nav ul li a {
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: #2D314D;
+    font-weight: 400;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -32px;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #31D35C, #2BB7DA);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+nav button {
+    margin-right: 0;
+}
+
+@media (max-width: 768px){
+    nav{
+        flex-direction: column;
+    }
+}
+
+/* ===================
+   Intro Section
+=================== */
+.intro_section {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -112,146 +134,245 @@ button:hover {
 
 .intro_adv {
     background-color: #FAFAFA;
-    display: flex;
-    flex-direction: row;
-    height: 665px;
-    position: relative; /* Needed for absolute positioning of child elements */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Four equal-width columns */
     overflow: hidden;
 }
 
+
 .intro_left {
-    width: 50%;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    padding-top: 180px;
-    padding-bottom: 180px;
+    padding: 15% 20%;
 }
-
 
 .intro_right {
-    width: 50%;
     position: relative;
-    overflow: visible; /* Allow the image to extend beyond the container */
 }
 
-.intro_background {
+.intro_right img {
     position: absolute;
-    top: -260px;
-    left: -95px; /* Extends 100px to the left beyond the container */
-    z-index: 1;
+    /* top: -16em; */
+    /* left: -6em; */
 }
 
-.intro_background img{
-    display: block;
-    max-width: auto; /* Allow the image to extend beyond its container */
-    height: auto;
+
+@media (max-width: 768px){
+    .intro_adv {
+        grid-template-columns: 1fr; /* Two equal-width columns */
+        justify-items: center;
+    }
+
+    .intro_left{
+        order: 2;
+        width: 100%;
+        padding: 15% 10%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .intro_right{
+        width: 100%;
+        min-height: 1000px;
+        max-height: 1000px;
+        background-color: #2BB7DA;
+    }
+
+    .intro_right img {
+        width: 100%;
+        height: auto;
+        right: 0;
+    }
 }
 
-.intro_mocup {
-    position: absolute;
-    z-index: 2;
-    top: -10%;
-    right: -4%;
-
-}
-
-.intro_mocup img{
-    display: block;
-    width: 110%;
-    max-width: auto;
-    height: auto;
-}
-
+/* ===================
+   Features Section
+=================== */
 .features {
     background-color: #F3F4F6;
-    width: auto;
-    height: 675px;
     display: flex;
-    flex-direction: column;
-} 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5em 10%;
+}
+
 .block0 {
-    margin-top: 100px;
-    width: 35%;
+    width: 60%;
+    padding: 1em 0;
 }
 
 .blocks {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four equal-width columns */
+    gap: 2em; /* Space between blocks */
+    width: 100%; /* Ensure the blocks container uses full width */
 }
 
-.block1, .block2, .block3, .block4{
-    margin-top: 50px;
-    margin-left: 0;
-    margin-right: 85px;
-    width: 20%;
+.block1, .block2, .block3, .block4 {
+    padding: 0; /* Adjust padding to control internal spacing */
+    box-sizing: border-box; /* Ensure padding doesn't add to the block's width */
 }
 
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .blocks {
+        grid-template-columns: 1fr; /* Stack blocks in a single column on small screens */
+        gap: 1em; /* Adjust gap for smaller screens */
+    }
+    .block0{
+        width: 100%;
+    }
+
+    .block0, .block1, .block2, .block3, .block4{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1em 3em;
+        text-align: center;
+    }
+}
+
+/* ===================
+   Articles Section
+=================== */
 .articles {
-    padding-top: 60px;
-    width: auto;
-    height: 655px;
     background-color: #FAFAFA;
     display: flex;
     flex-direction: column;
-    padding-bottom: 60px;
+    padding: 2% 10%;
+    padding-bottom: 5em;
 }
 
-.art_items{
-    display: flex;
-    flex-direction: row;
-    padding-top: 60px;
+.articles h2 {
+    margin: 3% 0;
 }
 
-.art_items p, .art_items h3{
+.articles p, .articles h3 {
     width: 70%;
+    padding: 0;
+    margin: 0.5em;
 }
 
-.articles img{
-    height: 250px;
-    width: 300px;
+.articles a {
+    color: #2D314D;
 }
 
-.art_items h3{
-    
+.articles a:hover {
+    color: #2BB7DA;
+}
+
+.articles img {
+    height: 300px;
+    width: 100%;
+}
+
+.art_items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four equal-width columns */
+    gap: 2em; /* Space between blocks */
+    width: 100%; /* Ensure the items container uses full width */
+    justify-content: center; /* Center the grid items */
 }
 
 .art1, .art2, .art3, .art4 {
-    background-color: #1100ff;
+    background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 15px;
+    padding-bottom: 2em;
+    box-sizing: border-box;
+    max-width: 350px; /* Set the desired maximum width */
 }
 
+@media (max-width: 1400px) {
+    .articles{
+        text-align: center;
+    }
+
+    .art_items {
+        grid-template-columns: repeat(2, 1fr); /* Two equal-width columns */
+        gap: 1em; /* Adjust gap for smaller screens */
+        justify-items: center;
+    }
+
+    .art1, .art2, .art3, .art4 {
+        max-width: 400px; /* Set the desired maximum width */
+    }
+}
+
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .art_items {
+        grid-template-columns: 1fr; /* Stack items in a single column on small screens */
+        gap: 1em; /* Adjust gap for smaller screens */
+        justify-items: center;
+    }
+
+    .art1, .art2, .art3, .art4 {
+        max-width: 500px; /* Set the desired maximum width */
+    }
+}
+
+
+
+/* ===================
+   Footer Section
+=================== */
 footer {
     background-color: #2D314D;
-    color: white;
-    height: 190px;
-    width: auto;
-    display: flex;
-    flex-direction: row;
+    color: #FFFFFF;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four equal-width columns */
+    gap: 2em; /* Space between blocks */
+
+    box-sizing: border-box;
+    padding: 0 10%;
+    width: 100%; /* Ensure the items container uses full width */
 }
 
-.seg1, .seg2, .seg3, .seg4, .seg5 {
-    width: 20%;
+footer a{
+    color: #FFFFFF;
+}
+
+.seg1, .seg2, .seg3, .seg4 {
+    padding: 2em 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.seg2{
+    display: flex;
+    justify-content:space-between;
+}
+
+.seg4 {
     display: flex;
     flex-direction: column;
-    padding-top: 45px;
-}
-.seg5{
-    display: flex;
     align-items: end;
 }
 
 .seg1 .logo_neg {
     width: 139px;
     height: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 3em;
 }
-footer ul img{
+
+footer img {
     width: 20px;
     height: auto;
-    padding: 4px;
+    padding: 0.2em;
+}
+
+footer ul img:hover{
+    filter: brightness(0) saturate(100%) invert(76%) sepia(33%) saturate(4300%) hue-rotate(153deg) brightness(92%) contrast(84%);
+}
+
+footer a:hover{
+    color:#2BB7DA
 }
 
 footer ul {
@@ -259,15 +380,37 @@ footer ul {
     padding: 0;
     list-style: none;
 }
-footer ul li{
-    padding: 10px;
+
+footer ul li {
+    padding: 0.5em 0;
 }
 
-.features, .articles, footer, .intro_left{
-    padding-left: 165px;
-    padding-right: 165px;
-}
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    footer {
+        grid-template-columns: 1fr; /* Stack items in a single column on small screens */
+        gap: 0; /* Adjust gap for smaller screens */
+        justify-items: center;
+    }
 
+    .seg1, .seg2, .seg3, .seg4 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0.5em;
+    }
+
+    .seg1 .logo_neg {
+        margin-bottom: 1em;
+    }
+
+    footer img {
+        padding: 0.5em;
+    }
+}
+/* ===================
+   Attribution
+=================== */
 .attribution {
     font-size: 11px;
     color: #FFFFFF;
@@ -275,5 +418,5 @@ footer ul li{
 }
 
 .attribution a {
-    color:  gray;
+    color: gray;
 }
