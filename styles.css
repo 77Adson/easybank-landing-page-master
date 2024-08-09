@@ -7,7 +7,7 @@ body {
 
 h1 {
     font-weight: 300;
-    font-size: 50px;
+    font-size: 55px;
     margin-bottom: 0px;
 }
 
@@ -20,7 +20,6 @@ h2 {
 h3 {
     font-weight: 300;
     font-size: 24px;
-    margin-bottom: 0px;
 }
 
 
@@ -103,47 +102,65 @@ button:hover {
     background-image: linear-gradient(to right, #84d199, #82ccdf);
 }
 
+.intro_section{
+    overflow-y: visible;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
 .intro_adv {
     background-color: #FAFAFA;
     display: flex;
     flex-direction: row;
     height: 665px;
+    position: relative; /* Needed for absolute positioning of child elements */
+    overflow: hidden;
 }
 
 .intro_left {
-    width: 30%;
-    flex-shrink:initial 3;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: right;
-    margin-left: 0%;
-    padding: 8%;
+    box-sizing: border-box;
+    padding-top: 180px;
+    padding-bottom: 180px;
 }
 
+
 .intro_right {
-    width: 70%;
-    height: 200%;
-    flex-grow: 7;
+    width: 50%;
     position: relative;
-    overflow: hidden; /* Hide all overflow except for the intro_mocup */
+    overflow: visible; /* Allow the image to extend beyond the container */
 }
 
 .intro_background {
-    width: 150%;
-    height: 80%;
-    z-index: 1;
     position: absolute;
-    top: -20%;
-    left: -8%;
+    top: -260px;
+    left: -95px; /* Extends 100px to the left beyond the container */
+    z-index: 1;
+}
+
+.intro_background img{
+    display: block;
+    max-width: auto; /* Allow the image to extend beyond its container */
+    height: auto;
 }
 
 .intro_mocup {
-    z-index: 2;
     position: absolute;
-    top: -12%;
-    right: -12%;
-    width: auto;
-    height: 80%;
+    z-index: 2;
+    top: -10%;
+    right: -4%;
+
+}
+
+.intro_mocup img{
+    display: block;
+    width: 110%;
+    max-width: auto;
+    height: auto;
 }
 
 .features {
@@ -160,55 +177,50 @@ button:hover {
 
 .blocks {
     display: flex;
-    width: 80%;
 }
 
 .block1, .block2, .block3, .block4{
     margin-top: 50px;
     margin-left: 0;
-    margin-right: 80px;
+    margin-right: 85px;
     width: 20%;
 }
-.articles img{
-    height: 250px;
-    width: 300px;
-}
+
 .articles {
+    padding-top: 60px;
     width: auto;
     height: 655px;
-    margin-top: 0;
     background-color: #FAFAFA;
     display: flex;
     flex-direction: column;
+    padding-bottom: 60px;
 }
 
 .art_items{
     display: flex;
     flex-direction: row;
-    width: 80%;
-}
-.art_items p, .art_items h3{
-    width: 75%;
-    margin: 0px;
+    padding-top: 60px;
 }
 
-.art_items .author {
-    font-size: 14px;
-    margin-top: 35px;
+.art_items p, .art_items h3{
+    width: 70%;
+}
+
+.articles img{
+    height: 250px;
+    width: 300px;
 }
 
 .art_items h3{
-    margin: 20px;
-}
-
-.art_items p{
-    font-size: 16px;
+    
 }
 
 .art1, .art2, .art3, .art4 {
+    background-color: #1100ff;
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    margin: 15px;
 }
 
 footer {
@@ -226,9 +238,11 @@ footer {
     flex-direction: column;
     padding-top: 45px;
 }
-.seg3{
-    background-color: red;
+.seg5{
+    display: flex;
+    align-items: end;
 }
+
 .seg1 .logo_neg {
     width: 139px;
     height: 20px;
@@ -249,9 +263,9 @@ footer ul li{
     padding: 10px;
 }
 
-.features, .articles, footer{
-    padding-left: 150px;
-    padding-right: 150px;
+.features, .articles, footer, .intro_left{
+    padding-left: 165px;
+    padding-right: 165px;
 }
 
 .attribution {
